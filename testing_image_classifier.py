@@ -22,7 +22,7 @@ test_datagen = ImageDataGenerator(rescale=1. / 255)
 
 test_generator = test_datagen.flow_from_directory(
     test_data_dir,
-    target_size=(150, 150),
+    target_size=(200, 200),
     color_mode="rgb",
     batch_size=1,
     class_mode=None,

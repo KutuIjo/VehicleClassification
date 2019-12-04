@@ -6,13 +6,13 @@ from keras import backend as K
 import json
 
 # dimensions of our images.
-img_width, img_height = 150, 150
+img_width, img_height = 200, 200
 
 train_data_dir = 'data/train'
 validation_data_dir = 'data/validation'
 nb_train_samples = 598
 nb_validation_samples = 199
-epochs = 20
+epochs = 15
 batch_size = 13
 
 if K.image_data_format() == 'channels_first':
