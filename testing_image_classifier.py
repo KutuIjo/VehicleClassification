@@ -36,7 +36,7 @@ pred=model.predict_generator(test_generator,
     steps=STEP_SIZE_TEST,
     verbose=1)
 
-predicted_class_indices=np.where(pred>0.5,'dogs','cats')
+predicted_class_indices=np.where(pred>0.5,'motorcycles','cars')
 
 predictions = predicted_class_indices.tolist()
 
