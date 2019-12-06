@@ -7,6 +7,13 @@ import cv2
 import numpy as np
 import os
 
+def indexing(source,dictionary):
+    target = []
+    for x in range(len(source)):
+        target.append(dictionary[source[x]])
+    return target
+
+
 test_data_dir = 'data/test'
 
 with open('model_in_json.json','r') as f:
@@ -42,8 +49,10 @@ classes = os.listdir("data/train")
 
 #predicted_class_indices=np.where(pred>0.5,'motorcycles','cars')
 predicted_class_indices=np.argmax(pred,axis=1)
-print(predicted_class_indices)
-predictions = predicted_class_indices.tolist()
+
+predictions=indexing(predicted_class_indices,classes)
+# predictions = predicted_class_indices.tolist()
+
 
 filenames=test_generator.filenames
 results=pd.DataFrame({"Filename":filenames,
